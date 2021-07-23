@@ -103,15 +103,22 @@ class connection
         // die(print_r($query));
     }
 
-    // public function login($Reference)
-    // {
-    //     $query = "SELECT * FROM users WHERE uref='" . $Reference . "'";
-    //     return $this->sql->query($query);
-    // }
-
-    public function edit($table, $username, $email)
+    // --------------------------------------------------------------Each actor login    
+    public function alogin($username, $pswrd)
     {
-        $query = "SELECT * FROM " . $table . "WHERE id=" . $id;
+        $query = "SELECT * FROM admins WHERE username='$username' AND pswrd='$pswrd'";
+        return $this->sql->query($query);
+    }
+
+    public function slogin($email, $pswrd)
+    {
+        $query = "SELECT * FROM students WHERE email='$email' AND pswrd='$pswrd'";
+        return $this->sql->query($query);
+    }
+
+    public function tlogin($email, $pswrd)
+    {
+        $query = "SELECT * FROM teachers WHERE email='$email' AND pswrd='$pswrd'";
         return $this->sql->query($query);
     }
 }

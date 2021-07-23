@@ -12,8 +12,8 @@ class admin{
         $this->db = new Connection();
     }
 
-    function connect($uref){
-        $result = $this->db->login($uref);
+    function connect($username, $pswrd){
+        $result = $this->db->login($username, $pswrd);
         return $result;
     }
 }
