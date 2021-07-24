@@ -2,6 +2,9 @@
 
 require_once "connection.php";
 
+// -----------------------Teachers also have login and sign up like students but they should be accepted by the admin -DONE-
+
+
 class teacher{
     public $fullname;
     public $email;
@@ -15,6 +18,8 @@ class teacher{
     public $proof;
     public $letter;
     public $applydate = date("Y/m/d");
+    public $active;
+    
     
     static private $table="teachers";
 
@@ -30,6 +35,12 @@ class teacher{
     function connect($email, $pswrd){
         $result = $this->db->login($email, $pswrd);
         return $result;
+    }
+
+    // teachers should be accepted by this method
+
+    function accept($id){
+        return $this->db->update(self::$table, ["active"], [$this->active], $id);
     }
 }
 

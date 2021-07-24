@@ -1,5 +1,7 @@
 <?php
 
+// -------------------------------------- -DONE-
+
 class connection
 {
     public $servername = 'localhost';
@@ -103,7 +105,8 @@ class connection
         // die(print_r($query));
     }
 
-    // --------------------------------------------------------------Each actor login    
+    // --------------------------------------------------------------Each actor login   
+
     public function alogin($username, $pswrd)
     {
         $query = "SELECT * FROM admins WHERE username='$username' AND pswrd='$pswrd'";

@@ -1,7 +1,7 @@
 <?php 
 
 require_once "connection.php";
-
+    // -------------------------- Admins only needs login   -DONE-
 class admin{
     public $username;
     public $pswrd;

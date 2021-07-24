@@ -2,6 +2,8 @@
 
 require_once "connection.php";
 
+ // ----------------------------- students will need to sign up and login -DONE-
+
 class student{
     public $fullname;
     public $email;
