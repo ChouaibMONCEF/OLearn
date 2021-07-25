@@ -7,7 +7,7 @@ require_once "connection.php";
 class comment{
     public $com;
     public $student;
-    public $postdate = date("Y/m/d");
+    public $postdate;
     
     static private $table="comments";
 

@@ -12,7 +12,7 @@ class video{
     public $subject;
     public $lesson;
     public $thumbnail;
-    public $adddate = date("Y/m/d");
+    public $adddate;
     public $active;
     
     static private $table="videos";

@@ -17,7 +17,7 @@ class teacher{
     public $experience;
     public $proof;
     public $letter;
-    public $applydate = date("Y/m/d");
+    public $applydate;
     public $active;
     
     

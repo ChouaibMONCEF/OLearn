@@ -76,7 +76,7 @@ class connection
             if ($i > 0) {
                 $vrg = ",";
             }
-            $name .= $vrg . "`" "". $tabName[$i] . "`" . $tabValue . "`";
+            $name .= $vrg . "`" . $tabName[$i] . "`" . $tabValue . "`";
         }
 
         $query = "UPDATE " . $table . " SET" . $name . " WHERE id=" . $id;
