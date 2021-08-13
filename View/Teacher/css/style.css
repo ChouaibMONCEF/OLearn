@@ -55,7 +55,7 @@ main table {
 main table td,
 main table th {
   padding: 15px;
-  color: #C9E4F0;
+  color: #616262;
 }
 input {
     margin-top: 20px;
@@ -92,7 +92,7 @@ main table th {
 main table tr:not(:first-child) {
   width: 100%;
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: #031436;
   text-decoration: none;
 }
 
@@ -114,10 +114,12 @@ main table tr:not(:first-child) td:last-child .action {
 
 main table tr:not(:first-child) td:last-child .action img {
   cursor: pointer;
-  width: 1rem;
+  width: 2rem;
 }
 
 main table tr:not(:first-child) > :first-child .product {
+  background-color: #031436;
+  color: #031436;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,3 +271,7 @@ main table tr:not(:first-child) > :first-child .product img {
   margin-top: auto;
 }
 /*# sourceMappingURL=dashboard.css.map */
+
+.video {
+  display: none;
+}

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="<?php echo BASE_URL;?>view/admin/css/style.css" />
   <title>OLearn</title>
 </head>
 <style>
@@ -22,28 +22,28 @@
 
   <div class="navbar">
     <div class="logo dlogo">
-      <a href="#" class=""><img src="includes/logo.svg" alt="logo smanager" /></a>
+      <a href="#" class=""><img src="<?php echo BASE_URL;?>view/admin/includes/logo.svg" alt="logo smanager" /></a>
     </div>
 
     <div class="profile-image">
-      <img id="profile" class="profileimg" src="includes/logo.svg" alt="profile" />
+      <img id="profile" class="profileimg" src="<?php echo BASE_URL;?>view/admin/includes/logo.svg" alt="profile" />
       
       <p class="user-name"></p>
     </div>
 
     <div class="link-item">
-      <a href="index.php" class="link">
-        <img src="includes/iteachers.svg" alt="icon" />
+      <a href="<?php echo BASE_URL;?>teacher/Teachers" class="link">
+        <img src="<?php echo BASE_URL;?>view/admin/includes/iteachers.svg" alt="icon" />
         <span>Approve Teachers</span>
       </a>
-      <a href="add.php" class="link">
-        <img src="includes/ivideos.svg" alt="icon" />
+      <a href="<?php echo BASE_URL;?>video/Videos" class="link">
+        <img src="<?php echo BASE_URL;?>view/admin/includes/ivideos.svg" alt="icon" />
         <span>Approve Videos</span>
       </a>
       
       <div class="bottme-nav">
         <a href="#" id="logout" class="link">
-          <img src="includes/ilogout.svg" alt="icon" />
+          <img src="<?php echo BASE_URL;?>view/admin/includes/ilogout.svg" alt="icon" />
           <span>Logout</span>
         </a>
       </div>
@@ -55,13 +55,27 @@
     <div class="tableHolder">
       <table id="table">
         <tr id="row">
-          <th>Title</th>
-          <th>Description</th>
+          <th>Name</th>
           <th>Subject</th>
-          <th>Add Date</th>
-          <th>Views</th>
+          <th>Experience</th>
+          <th>Apply Date</th>
           <th>Action</th>
         </tr>
+        <?php foreach($teachers as $teacher){; ?>
+        <tr>
+        
+        
+          <div class="teacher"> 
+          <td><?php echo $teacher['fullname']; ?> </td>
+          <td><?php echo $teacher['subject']; ?> </td>
+          <td><?php echo $teacher['experience']; ?> </td>
+          <td><?php echo $teacher['applydate']; ?> </td>
+          <td>
+              <a href="<?php echo BASE_URL;?>admin/approveteacher/<?php echo $teacher['id'];?>"><img src="<?php echo BASE_URL;?>view/admin/includes/imore.svg" id="more" alt="more" /></a>
+          </td>
+        </div>
+        </tr>
+         <?php };?>
       </table>
     </div>
   </main>

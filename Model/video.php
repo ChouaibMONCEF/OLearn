@@ -22,7 +22,11 @@ class video{
     }
 
     function getById($id){
-        return $this->db->selectById($id);
+        return $this->db->selectById(self::$table, $id);
+    }
+
+    function getAll(){
+        return $this->db->getAll(self::$table);
     }
 
     function Addvideo(){
@@ -30,7 +34,7 @@ class video{
     }
 
     function update($id){
-        return $this->db->update(self::$table, ["title", "dscr", "grade", "subject", "lesson", "thumbnail"], [$this->title, $this->dscr, $this->grade, $this->subject, $this->lesson, $this->thumbnail], $id);
+        return $this->db->update(self::$table, ["title", "dscr"], [$this->title, $this->dscr], $id);
     }
 
     function accept($id){
@@ -40,6 +44,7 @@ class video{
     function delete($id){
         $this->db->delete(self::$table, $id);
     }
+
 }
 
 ?>

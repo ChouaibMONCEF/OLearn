@@ -23,15 +23,15 @@ class connection
 
     public function getAll($table)
     {
-        $query = "SELECT * from" . $table;
-        return $this->sql->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        $query = "SELECT * from " . $table . " WHERE active = 0";
+        return $this->sql->query($query)->fetchAll();
     }
 
     // ----------------------------------------------------------------delete
 
     public function delete($table, $id)
     {
-        $query = "DELETE from $table WHERE id=$id";
+        $query = "DELETE from $table WHERE id= " . $id;
         $this->sql->query($query);
     }
 
@@ -76,10 +76,12 @@ class connection
             if ($i > 0) {
                 $vrg = ",";
             }
-            $name .= $vrg . "`" . $tabName[$i] . "`" . $tabValue . "`";
+            
+            $name .= $vrg . "`" . $tabName[$i] . "`='" . $tabValue[$i] . "'";
         }
 
         $query = "UPDATE " . $table . " SET" . $name . " WHERE id=" . $id;
+
         $this->sql->query($query);
     }
 
@@ -91,12 +93,12 @@ class connection
         return $this->sql->query($query)->fetchAll()[0];
     }
 
-    public function selectById($id)
+    public function selectById($table ,$id)
     {
 
-        $query = "SELECT * FROM appointments WHERE Rref='$id'";
+        $query = "SELECT * FROM ". $table . " WHERE id=" . $id;
 
-
+        
         if ($this->sql->query($query)) {
             return $this->sql->query($query)->fetchAll();
         } else {

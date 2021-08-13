@@ -32,15 +32,27 @@ class teacher{
         return $this->db->add(self::$table, ["fullname", "email", "phonenumber", "birthdate", "pswrd", "picture", "subject", "school", "experience", "proof", "letter", "applydate"], [$this->fullname, $this->email, $this->phonenumber, $this->birthdate, $this->pswrd, $this->picture, $this->subject, $this->school, $this->experience, $this->proof, $this->letter, $this->applydate]);
     }
 
+    function getById($id){
+        return $this->db->selectById(self::$table, $id);
+    }
+
     function connect($email, $pswrd){
         $result = $this->db->login($email, $pswrd);
         return $result;
+    }
+
+    function getAll(){
+        return $this->db->getAll(self::$table);
     }
 
     // teachers should be accepted by this method
 
     function accept($id){
         return $this->db->update(self::$table, ["active"], [$this->active], $id);
+    }
+
+    function delete($id){
+        $this->db->delete(self::$table, $id);
     }
 }
 
