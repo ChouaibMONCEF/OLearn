@@ -4,55 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>view/admin/css/apt.css" />
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <section>
+    <div class="container">
         <?php foreach($teachers as $teacher){; ?>
-                    <div>
-                        <label>Name :</label> <br>
-                        <div><?php echo $teacher['fullname'];?></div>
-                    </div>
-                    <div>
-                        <label>Email :</label> <br>
-                        <div><?php echo $teacher['email'];?></div>
-                    </div>
-                    <div>
-                        <label>Birthdate :</label> <br>
-                        <div><?php echo $teacher['birthdate'];?></div>
-                    </div>
-                    <div>
-                        <label>Subject :</label> <br>
-                        <div><?php echo $teacher['subject'];?></div>
-                    </div>
-                    <div>
-                        <label>School :</label> <br>
-                        <div><?php echo $teacher['school'];?></div>
-                    </div>
-                    <div>
-                        <label>Experienve :</label> <br>
-                        <div><?php echo $teacher['experience'];?></div>
-                    </div>
-                    <div>
-                        <label>Document :</label> <br>
-                        <div><?php echo $teacher['proof'];?></div>
-                    </div>
-                    <div>
-                        <label>Letter from the teacher :</label> <br>
-                        <div><?php echo $teacher['letter'];?></div>
-                    </div>
-                    <div>
+
+        <div class="infos" >
+            <div class="teacher" >
+                <p>My name is <b><?php echo $teacher['fullname'];?></b> I was Born in <b><?php echo $teacher['birthdate'];?></b>, I have been teaching <b><?php echo $teacher['subject'];?></b> for <b><?php echo $teacher['experience'];?></b> years. here is My Email <b><?php echo $teacher['email'];?></b><br>
+                <br>
+                Letter: <br> <br> <?php echo $teacher['letter'];?></p>
+                <br>
+                
+            </div> 
+            <div class="pic"> 
+                <img src="<?php echo BASE_URL;?>Assets/proof/<?php echo $teacher['proof'];?>" alt="" srcset=""> 
+            </div>
+        </div>
+                    <div class="btnc" >
                     <form action="http://localhost/OLearn/admin/delete/<?php echo $teacher['id'];?>" method="post">
-                    <button type="submit" >Decline</button>
+                    <button class="decline"type="submit" >Decline</button>
                     </form>
-                    <form action="http://localhost/OLearn/admin/update/<?php echo $teacher['id'];?>" method="POST">
+                    <form action="http://localhost/OLearn/admin/updatet/<?php echo $teacher['id'];?>" method="POST">
                         <input type="hidden" value="1" name="active">
-                    <button type="submit" >Accept</button>
+                    <button class="accept"type="submit" >Accept</button>
                     </form>
                     </div>
                    <?php };?>
-            </div>
-        </form>
-    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 </html>

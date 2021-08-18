@@ -38,8 +38,7 @@ header{
 }
 
 .heading{
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    
     text-align: center;
     color: #7579E7;
     -webkit-background-clip: text;
@@ -142,7 +141,7 @@ header label{
 }
 
 .us .box-container{
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,14 +162,20 @@ header label{
     margin-left: 5rem; 
 }
 
+header nav .cbtn{
+    border: solid 1px #7579E7;
+    padding: 1.6rem;
+    border-radius: 2px;
+    color: #7579E7;
+}
+
 .intro .container { 
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 .intro1 .container{
-    margin-top: 100px;
+    margin-top: 100rem;
     display: flex;
-    
 }
 
 .intro1 .container .student{
@@ -211,7 +216,7 @@ header label{
 
 @media (max-width:1200px){
     html{
-        font-size: 55%;
+        font-size: 50%;
     }
 }
 
@@ -242,8 +247,8 @@ header label{
 
 
     header nav{
-        background: #031436;
-        width: 100%;
+    background: #031436;
+    width: 100%;
     position: absolute;
     TOP: 100%;
     left: 0;
@@ -273,8 +278,8 @@ header label{
         flex-flow: column-reverse;
     }
     .home .image img{
-        margin-bottom: 100px;
-        width: 60vw;
+        margin-bottom: 30px;
+        width: 55vw;
     }
     .home .content h3{
     font-size: 3rem;

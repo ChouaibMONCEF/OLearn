@@ -1,0 +1,146 @@
+*{
+    font-family: "lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    color: #C9E4F0;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #080516;
+}
+
+section{
+    
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #080516;
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    padding: 9% 9%;
+
+}
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+
+}
+
+.btnc{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.decline{
+    width: 15vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(255, 0, 64);
+    border: 1px rgb(255, 0, 64) solid;
+}
+
+.accept{
+    width: 15vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #7579E7;
+    color: #C9E4F0;
+}
+
+.teacher{
+    
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+}
+
+.teacher p{
+    font-size: 1.5rem;
+    
+    
+
+}
+
+.pic img{
+    margin: 40px;
+    width: 25vw;
+    height: 40vw;
+    height: auto;
+    color: #C9E4F0;
+}
+
+
+.infos{
+    display:flex;
+    align-items: center;
+    justify-content:center;   
+}
+
+@media (max-width:980px){
+    
+    .infos{
+    flex-flow: column;  
+}
+.pic img{
+    margin: 40px;
+    width: 50vw;
+    height: auto;
+    color: #C9E4F0;
+}
+}
+
+@media (max-width:750px){
+
+    .decline{
+    width: 27.5vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(255, 0, 64);
+    border: 1px rgb(255, 0, 64) solid;
+}
+
+.accept{
+    width: 27.5vw;
+    height: 4vh;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #7579E7;
+    color: #C9E4F0;
+}
+    
+
+.pic img{
+    margin: 40px;
+    width: 75vw;
+    height: auto;
+    color: #C9E4F0;
+}
+}

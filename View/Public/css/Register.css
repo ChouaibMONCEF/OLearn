@@ -1,0 +1,430 @@
+*{
+    font-family: "lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    background-color: #080516;
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    background-color: #080516;
+}
+
+.olearn{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 50px;
+}
+
+
+
+.form{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 30vw;
+    height: 33vw;
+    background-color: #C9E4F0;
+    border-radius: 5px;
+}
+
+.welcome{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 30vw;
+    padding: 5px;
+    background-color: #031436;
+    border-radius: 5px;
+}
+
+section .welcome img{
+    width: 29vw;
+}
+
+.none{
+    display: none;
+}
+
+.nrdd{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 28vw;
+    height: 4vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    background-color: #C9E4F0;
+    border: 1px #7579E7 solid;
+    color: #080516;
+}
+
+section .welcome h3{
+
+    padding: 10px 50px 30px 50px;
+    
+    font-size: 3rem;
+    color: #7579E7;
+}
+
+section .form h3{
+
+    padding: 10px 50px 30px 50px;
+    
+    font-size: 3rem;
+    color: #080516;
+}
+
+section .form p{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    padding: 10px;
+    margin-top: 20px;
+    
+    font-size: 1.5rem;
+    color: #080516;
+}
+
+section .form form .nrd{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 28vw;
+    height: 4vh;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    
+    color: #080516;
+}
+
+section .form form button{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 28vw;
+    height: 4vh;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    background-color: #7579E7;
+    color: #C9E4F0;
+}
+
+section .form form label{
+    font-size: 1.5rem;
+}
+.radio{
+    margin-top: 10px;
+}
+
+.rdo{
+    padding: 10px;
+}
+
+.inp{
+    
+    padding-top: 10px;
+}
+
+section .form form .btns{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    
+}
+
+section .form form .previous{
+    width: 49%;
+    border: 2px solid #7579E7;
+    color: #080516;
+    background-color: transparent;
+    
+}
+section .form form .next{
+    width: 49%;
+    
+}
+
+textarea{
+    width: 28vw;
+    height: 30vh;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+a{
+    padding-left: 5px;
+    color: #7579E7;
+}
+
+
+@media (max-width:1800px){
+    .form{
+    width: 30vw;
+    height: 60vh;
+}
+}
+
+@media (max-width:1150px){
+section{
+    
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #080516;
+    background-size: cover;
+    background-position: center;
+    padding: 0 5%;
+    flex-flow: column;
+
+}
+
+
+.form{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 60vw;
+    height: 65vh;
+    background-color: #C9E4F0;
+    border-radius: 5px;
+}
+
+.welcome{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 60vw;
+    padding: 5px;
+    background-color: #031436;
+    border-radius: 5px;
+}
+
+section .form form .nrd{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 55vw;
+    height: 4vh;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    
+    color: #080516;
+}
+section .form form .nrdd{
+    
+    width: 55vw;
+    
+}
+textarea{
+    padding: 10px;
+    width: 55vw;
+    height: 30vh;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+section .form form button{
+    width: 55vw;
+}
+
+section .welcome h3{
+
+    padding: 10px;
+    
+}
+
+.welcome img{
+   
+    display: none;
+}
+}
+@media (max-width:850px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:730px){
+    section{
+    padding: 0 3%;
+
+}
+
+
+
+.form{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 85vw;
+    height: 65vh;
+    background-color: #C9E4F0;
+    border-radius: 5px;
+}
+
+.welcome{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 85vw;
+    padding: 5px;
+    background-color: #031436;
+    border-radius: 5px;
+}
+
+section .form form .nrd{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 80vw;
+    height: 4vh;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    
+    color: #080516;
+}
+section .form form .nrdd{
+    
+    width: 80vw;
+    
+}
+textarea{
+    width: 80vw;
+    height: 30vh;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+section .form form button{
+    width: 80vw;
+}
+
+section .welcome h3{
+
+    padding: 10px;
+    
+}
+
+.welcome img{
+   
+    display: none;
+}
+}
+
+@media (max-width:500px){
+    section{
+    padding: 0 1%;
+
+}
+
+
+.form{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 99vw;
+    height: 65vh;
+    background-color: #C9E4F0;
+    border-radius: 5px;
+}
+
+.welcome{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-flow: column;
+    width: 99vw;
+    padding: 5px;
+    background-color: #031436;
+    border-radius: 5px;
+}
+
+section .form form .nrd{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width: 95vw;
+    height: 4vh;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+
+    
+    
+    color: #080516;
+}
+section .form form .nrdd{
+    
+    width: 95vw;
+    
+}
+textarea{
+    width: 95vw;
+    height: 30vh;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+section .form form button{
+    width: 95vw;
+}
+
+section .welcome h3{
+
+    padding: 10px;
+    
+}
+
+.welcome img{
+   
+    display: none;
+}
+}
+
+@media (max-width:396px){
+    section .welcome h3{
+
+    font-size: 2.5rem;
+    
+}
+section .form h3{
+
+    font-size: 2.5rem;
+    
+}
+}
+

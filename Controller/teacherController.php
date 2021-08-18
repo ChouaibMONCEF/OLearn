@@ -12,9 +12,8 @@ class teacherController
 
     public function register()
     {
-        if (isset($_POST['fullname']) && !empty($_POST['fullname']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['pswrd']) && !empty($_POST['pswrd']) && isset($_POST['birthdate']) && !empty($_POST['birthdate']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_POST['school']) && !empty($_POST['school']) && isset($_POST['experience']) && !empty($_POST['experience']) && isset($_POST['proof']) && !empty($_POST['proof']) && isset($_POST['letter']) && !empty($_POST['letter'])) {
+        if (isset($_POST['fullname']) && !empty($_POST['fullname']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['pswrd']) && !empty($_POST['pswrd']) && isset($_POST['birthdate']) && !empty($_POST['birthdate']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_POST['school']) && !empty($_POST['school']) && isset($_POST['experience']) && !empty($_POST['experience']) && isset($_FILES['proof']) && isset($_POST['letter']) && !empty($_POST['letter'])) {
             $obj = new teacher;
-
             $obj->fullname = $_POST['fullname'];
             $obj->email = $_POST['email'];
             $obj->birthdate = $_POST['birthdate'];
@@ -22,7 +21,9 @@ class teacherController
             $obj->subject = $_POST['subject'];
             $obj->school = $_POST['school'];
             $obj->experience = $_POST['experience'];
-            $obj->proof = $_POST['proof'];
+            $obj->proof = $_FILES['proof']['name'];
+            $img = $_FILES['proof']['name'];
+            move_uploaded_file($_FILES['proof']['tmp_name'], "Assets/proof/$img");
             $obj->letter = $_POST['letter'];
             $obj->applydate = date("Y/m/d");
             $obj->register();
@@ -33,7 +34,7 @@ class teacherController
 
     function add(){
         require __DIR__ . '/../View/teacher/add.php';
-        if (isset($_POST['video']) && !empty($_POST['video']) && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['grade']) && !empty($_POST['grade']) && isset($_POST['dscr']) && !empty($_POST['dscr']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_POST['thumbnail']) && !empty($_POST['thumbnail'])){
+        if (isset($_POST['video']) && !empty($_POST['video']) && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['grade']) && !empty($_POST['grade']) && isset($_POST['dscr']) && !empty($_POST['dscr']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_FILES['thumbnail'])){
         $obj = new video;
 
         $obj->video = $_POST['video'];
@@ -41,7 +42,9 @@ class teacherController
         $obj->dscr = $_POST['dscr'];
         $obj->grade = $_POST['grade'];
         $obj->subject = $_POST['subject'];
-        $obj->thumbnail = $_POST['thumbnail'];
+        $obj->thumbnail = $_FILES['thumbnail']['name'];
+        $img = $_FILES['thumbnail']['name'];
+        move_uploaded_file($_FILES['thumbnail']['tmp_name'], "Assets/thumbnail/$img");
         $obj->adddate = date("Y/m/d");
 
         $obj->addVideo();

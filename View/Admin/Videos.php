@@ -80,9 +80,7 @@
           <td><?php echo $video['adddate']; ?> </td>
           
           <td>
-
-              <img src="<?php echo BASE_URL;?>view/admin/includes/imore.svg" id="more" alt="More" />
-
+              <a href="<?php echo BASE_URL;?>admin/approvevideo/<?php echo $video['id'];?>"><img src="<?php echo BASE_URL;?>view/admin/includes/imore.svg" id="more" alt="more" /></a>
           </td>
         </div>
         </tr>

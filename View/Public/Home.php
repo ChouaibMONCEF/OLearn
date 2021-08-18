@@ -20,7 +20,7 @@
              <a href="">Home</a>
              <a href="">About Us</a>
              <a href="">Login</a>
-             <a href="">Register</a>
+             <a class="cbtn" href="">Register</a>
          </nav>
     </header>
 
@@ -41,7 +41,7 @@
     </section>
 
     <section class="us">
-        <h3 class="heading"> >Why Us ?</h3>
+        <h3 class="heading">Why Us ?</h3>
         <div class="box-container" >
             <div class="box" >
                 <img src="<?php echo BASE_URL;?>view/public/includes/solving.svg" alt="">

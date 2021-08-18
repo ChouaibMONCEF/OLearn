@@ -8,12 +8,12 @@
 </head>
 <body>
     <div>
-        <form id="form" method="POST" action="http://localhost/OLearn/video/add">
+        <form id="form" method="POST" action="http://localhost/OLearn/teacher/add" enctype="multipart/form-data">
             <div id="sone" >
                 <div>
                     <div>
-                        <label>Video here :</label> <br>
-                        <input type="file" name="video" >
+                        <label>Enter a valid YouTube link </label> <br>
+                        <input type="texr" name="video">
                     </div>
                     <div>
                         <label>Title :</label> <br>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>view/public/css/Register.css">
     <title>Document</title>
 </head>
 
@@ -15,7 +16,7 @@
          <div>
             <div>
                <label>Fullname :</label> <br>
-               <input type="text" name="fullname" placeholder="Choaib Moncef">
+               <input class="nrd" type="text" name="fullname" placeholder="Choaib Moncef">
             </div>
             <div>
                <label>Email :</label> <br>
@@ -116,69 +117,88 @@
   </script>
 
       <body>
-    <div>
-        <form id="form" method="POST" action="http://localhost/OLearn/student/register">
+         <img class="olearn" src="<?php echo BASE_URL;?>view/public/includes/logo.svg" alt="" srcset="">
+      <section>
+
+         <div class="welcome" >
+            <h3>Welcome to our Community!</h3>
+            <img src="<?php echo BASE_URL;?>view/public/includes/welcome.svg" alt="" srcset="">
+         </div>
+
+    <div class="form"> 
+       <h3>Register</h3>
+        <form id="form" method="POST" action="http://localhost/OLearn/student/register" enctype="multipart/form-data">
             <div id="sone" >
                 <div>
-                    <div>
+                    <div class="inp">
                         <label>Fullname :</label> <br>
-                        <input type="text" name="fullname" placeholder="Choaib Moncef">
+                        <input class="nrd" type="text" name="fullname" placeholder="Choaib Moncef">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>Email :</label> <br>
-                        <input type="text" name="email" placeholder="ChoaibMoncef1@gmail.com">
+                        <input class="nrd" type="text" name="email" placeholder="ChoaibMoncef1@gmail.com">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>Birthdate :</label> <br>
-                        <input type="date" name="birthdate">
+                        <input class="nrd" type="date" name="birthdate">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>Password :</label> <br>
-                        <input type="password" name="pswrd">
+                        <input class="nrd" type="password" name="pswrd">
                     </div>
-                    <div>
+                    <div class="radio">
+                       <label>Are you a:</label> <br>
+                       <div class="rdo" >
                         <input type="radio" onclick="javascript:Usert()" id="student" name="type">
-                        <label for="student">Student</label>
+                        <label for="student">Student</label> &nbsp; &nbsp; &nbsp; &nbsp; 
                         <input type="radio" onclick="javascript:Usert()" id="teacher" name="type" >
                         <label for="teacher">Teacher</label><br>
+                     </div>
                     </div>
-                    <button id="btn" onclick="javascript:next()" type="submit">Submit</button>
+                    <button id="btn" onclick="javascript:next()" type="submit">Sign Up</button>
                 </div>
             </div>
             <div id="stwo" style="display:none" >
                 <div>
-                    <div>
+                    <div class="inp">
                         <label>What do you teach :</label> <br>
-                        <input type="text" name="subject" placeholder="Mathematiques">
+                        <input class="nrd" type="text" name="subject" placeholder="Mathematiques">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>Where do you teach :</label> <br>
-                        <input type="text" name="school" placeholder="Lycee Mohammed Belhcen elouazzani">
+                        <input class="nrd" type="text" name="school" placeholder="Lycee Mohammed Belhcen elouazzani">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>How many years you been teaching :</label> <br>
-                        <input type="number" name="experience">
+                        <input class="nrd" type="number" name="experience">
                     </div>
-                    <div>
+                    <div class="inp">
                         <label>Certificate from school :</label> <br>
-                        <input type="file" name="proof">
+                        <label for="img" class="nrdd">Upload Image Here</label>
+                        <input class="none" type="file" id="img" name="proof">
                     </div>
-                    <button onclick="previous()" type="button">Previous</button>
-                    <button onclick="nexttwo()" type="button">Next</button>
-                </div>
+                    <div class="btns">
+                    <button class="previous" onclick="previous()" type="button">Previous</button>
+                    <button class="next" onclick="nexttwo()" type="button">Next</button>
+                     </div>
+                  </div>
             </div>
             <div id="sthree" style="display:none" >
                 <div>
-                    <div>
+                    <div class="inp">
                         <label>Why should we accept you :</label> <br>
-                        <textarea name="letter" id="" cols="30" rows="10"></textarea>
+                        <textarea name="letter" id="" cols="60" rows="20"></textarea>
                     </div>
-                    <button onclick="previoustwo()" type="button">Previous</button>
-                    <button type="submit">Submit</button>
-                </div>
+                    <div class="btns">
+                    <button class="previous" onclick="previoustwo()" type="button">Previous</button>
+                    <button class="next" type="submit">Sign Up</button>
+                  </div>
+             </div>
             </div>
+            <p>Already have an account ? <a href=""> Log In</a></p>
         </form>
     </div>
+   </section>
 </body>
 
       <!-- <script>

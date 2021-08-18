@@ -8,8 +8,10 @@ class adminController{
 
     function index(){
         
-        require __DIR__ . '/../View/Public/Register.php';
+        require __DIR__ . '/../View/Public/adminlogin.php';
     }
+
+    
 
     function Videos(){
         $obj = new video;
@@ -36,6 +38,7 @@ class adminController{
         $teachers = $obj->getById($id);
         require __DIR__ . '/../View/admin/teacherapprove.php';
     }
+
     
     function Delete($id){
         $obj = new teacher;
@@ -43,12 +46,19 @@ class adminController{
         header('Location: http://localhost/OLearn/admin/teachers');
     }
 
-    function update($id){
+    function updatet($id){
         $obj = new teacher;
         $obj->active = $_POST['active'];
 
         $obj->accept($id);
         header('Location: http://localhost/OLearn/admin/teachers');
+    }
+    function updatev($id){
+        $obj = new video;
+        $obj->active = $_POST['active'];
+
+        $obj->accept($id);
+        header('Location: http://localhost/OLearn/admin/videos');
     }
 
 }

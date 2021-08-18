@@ -8,25 +8,25 @@ class videoController{
         
     }
 
-    function add(){
-        require __DIR__ . '/../View/teacher/add.php';
-        if (isset($_POST['video']) && !empty($_POST['video']) && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['grade']) && !empty($_POST['grade']) && isset($_POST['dscr']) && !empty($_POST['dscr']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_POST['thumbnail']) && !empty($_POST['thumbnail'])){
-        $obj = new video;
+    // function add(){
+    //     require __DIR__ . '/../View/teacher/add.php';
+    //     if (isset($_POST['video']) && !empty($_POST['video']) && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['grade']) && !empty($_POST['grade']) && isset($_POST['dscr']) && !empty($_POST['dscr']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_FILES['thumbnail']) && !empty($_FILES['thumbnail'])){
+    //     $obj = new video;
 
-        $obj->video = $_POST['video'];
-        $obj->title = $_POST['title'];
-        $obj->dscr = $_POST['dscr'];
-        $obj->grade = $_POST['grade'];
-        $obj->subject = $_POST['subject'];
-        $obj->thumbnail = $_POST['thumbnail'];
-        $obj->adddate = date("Y/m/d");
+    //     $obj->video = $_POST['video'];
+    //     $obj->title = $_POST['title'];
+    //     $obj->dscr = $_POST['dscr'];
+    //     $obj->grade = $_POST['grade'];
+    //     $obj->subject = $_POST['subject'];
+    //     $obj->thumbnail = $_POST['thumbnail'];
+    //     $obj->adddate = date("Y/m/d");
 
-        $obj->addVideo();
+    //     $obj->addVideo();
         
-        }else {
-            echo"error";
-        }
-    }
+    //     }else {
+    //         echo"error";
+    //     }
+    // }
 
     // function MyVideos(){
     //     $obj = new video;
