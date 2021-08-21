@@ -1,12 +1,12 @@
 <?php 
 
-// ------------------------------------comments can be crud by students 
-
 
 require_once "connection.php";
 class comment{
     public $com;
     public $student;
+    public $sid;
+    public $vid;
     public $postdate;
     
     static private $table="comments";
@@ -20,7 +20,7 @@ class comment{
     }
 
     function Addcomment(){
-        return $this->db->add(self::$table, ["com", "student", "postdate"], [$this->com, $this->student, $this->postdate]);
+        return $this->db->add(self::$table, ["com", "student", "sid", "vid", "postdate"], [$this->com, $this->student, $this->sid, $this->vid, $this->postdate]);
     }
 
     function update($id){

@@ -11,16 +11,17 @@
 <body>
 
     <header>
+        <a href="<?php echo BASE_URL;?>public/home">
          <img src="<?php echo BASE_URL;?>view/public/includes/logo.svg" alt="">
+        </a>
 
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fas fa-bars" ></label>
 
          <nav>
-             <a href="">Home</a>
-             <a href="">About Us</a>
-             <a href="">Login</a>
-             <a class="cbtn" href="">Register</a>
+             <a href="<?php echo BASE_URL;?>public/home">Home</a>
+             <a href="<?php echo BASE_URL;?>public/login">Login</a>
+             <a class="cbtn" href="<?php echo BASE_URL;?>public/register">Register</a>
          </nav>
     </header>
 
@@ -31,7 +32,7 @@
     <div class="content">
         <h3>Platform OLearn for every Student and Teacher</h3> <br>
         <p>The most popular platform for online learning in morocco, students have access to every lesson they need with a forum where they can ask questions. Teachers can share their videos on the platform and earn money out of it.</p> <br>
-        <a href="" class="btn" >Register Now</a>
+        <a href="<?php echo BASE_URL;?>public/register" class="btn" >Register Now</a>
     </div>
 
     <div class="image" >
@@ -70,7 +71,7 @@
     <div class="content">
         <h3>Learn and get good grades you deserve easily.</h3> <br>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis viverra nibh. Porttitor lacus luctus accumsan tortor posuere ac ut.</p> <br>
-        <a href="" class="btn" >Student</a>
+        <a href="<?php echo BASE_URL;?>public/register" class="btn" >Student</a>
     </div>
     </div> 
     
@@ -89,7 +90,7 @@
     <div class="content">
         <h3>Teach students from everywhere and spread knowledge.</h3> <br>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis viverra nibh. Porttitor lacus luctus accumsan tortor posuere ac ut.</p> <br>
-        <a href="" class="btn" >Teacher</a>
+        <a href="<?php echo BASE_URL;?>public/register" class="btn" >Teacher</a>
     </div>
 
     <div class="image" >

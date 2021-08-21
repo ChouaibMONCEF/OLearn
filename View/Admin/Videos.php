@@ -26,11 +26,7 @@
       <a href="#" class=""><img src="<?php echo BASE_URL;?>view/teacher/includes/logo.svg" alt="logo smanager" /></a>
     </div>
 
-    <div class="profile-image">
-      <img id="profile" class="profileimg" src="<?php echo BASE_URL;?>view/teacher/includes/logo.svg" alt="profile" />
-      
-      <p class="user-name"></p>
-    </div>
+    
 
     <div class="link-item">
       <a href="<?php echo BASE_URL;?>teacher/ApproveTeachers" class="link">
@@ -42,7 +38,7 @@
         <span>Approve Videos</span>
       </a>
       <div class="bottme-nav">
-        <a href="#" id="logout" class="link">
+        <a href="<?php echo BASE_URL;?>admin/logout" id="logout" class="link">
           <img src="<?php echo BASE_URL;?>view/teacher/includes/ilogout.svg" alt="icon" />
           <span>Logout</span>
         </a>
@@ -54,7 +50,7 @@
     <h1>Videos</h1>
     <div class="search">
     <form action="">
-    <input type="text" placeholder="     Search"  >
+    <input type="text" placeholder="Search">
     <button class="btn"><i class="fa fa-search" style="color: #7579E7" ></i></button>
     
   </form>

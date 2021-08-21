@@ -14,6 +14,7 @@ class video{
     public $thumbnail;
     public $adddate;
     public $active;
+    public $com;
     
     static private $table="videos";
 
@@ -28,6 +29,23 @@ class video{
     function getAll(){
         return $this->db->getAll(self::$table);
     }
+
+    function myvids($id){
+        return $this->db->myvids(self::$table, $id);
+    }
+
+    function getAccepted(){
+        return $this->db->getAccepted(self::$table);
+    }
+
+    function getvac($id){
+        return $this->db->getvac($id);
+    }
+
+    function getcom($id){
+        return $this->db->getcom($id);
+    }
+    
 
     function Addvideo(){
         return $this->db->add(self::$table, ["video", "title", "dscr", "grade", "subject", "lesson", "thumbnail", "adddate"], [$this->video, $this->title, $this->dscr, $this->grade, $this->subject, $this->lesson, $this->thumbnail, $this->adddate]);

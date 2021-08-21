@@ -36,14 +36,15 @@ class teacher{
         return $this->db->selectById(self::$table, $id);
     }
 
-    function connect($email, $pswrd){
-        $result = $this->db->login($email, $pswrd);
+    function login($email, $pswrd){
+        $result = $this->db->login(self::$table, $email, $pswrd);
         return $result;
     }
 
     function getAll(){
         return $this->db->getAll(self::$table);
     }
+
 
     // teachers should be accepted by this method
 

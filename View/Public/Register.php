@@ -87,7 +87,7 @@
             }else if (document.getElementById("student").checked){
                document.getElementById('form').action = 'http://localhost/OLearn/student/register';
                document.getElementById('btn').type = 'submit';
-               document.getElementById('btn').innerText = 'Submit';
+               document.getElementById('btn').innerText = 'Sign Up';
             }
          }
          function next() {
@@ -117,7 +117,9 @@
   </script>
 
       <body>
+         <a href="<?php echo BASE_URL;?>public/home">
          <img class="olearn" src="<?php echo BASE_URL;?>view/public/includes/logo.svg" alt="" srcset="">
+      </a>
       <section>
 
          <div class="welcome" >
@@ -195,7 +197,7 @@
                   </div>
              </div>
             </div>
-            <p>Already have an account ? <a href=""> Log In</a></p>
+            <p>Already have an account ? <a href="<?php echo BASE_URL;?>public/login"> Log In</a></p>
         </form>
     </div>
    </section>

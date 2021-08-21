@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
   <link rel="stylesheet" href="<?php echo BASE_URL;?>view/teacher/css/style.css" />
   <title>OLearn</title>
 </head>
@@ -27,31 +26,21 @@
       <a href="#" class=""><img src="<?php echo BASE_URL;?>view/teacher/includes/logo.svg" alt="logo smanager" /></a>
     </div>
 
-    <div class="profile-image">
-      <img id="profile" class="profileimg" src="<?php echo BASE_URL;?>view/teacher/includes/logo.svg" alt="profile" />
-      
-      <p class="user-name"></p>
-    </div>
+    
 
     <div class="link-item">
-      <a href="index.php" class="link">
-        <img src="<?php echo BASE_URL;?>view/teacher/includes/idashboard.svg" alt="icon" />
-        <span>Dashboard</span>
-      </a>
-      <a href="add.php" class="link">
+
+      <a href="?php echo BASE_URL;?>teacher/myvideos" class="link">
         <img src="<?php echo BASE_URL;?>view/teacher/includes/ivideos.svg" alt="icon" />
         <span>My videos</span>
       </a>
-      <a href="index.php" class="link">
+      <a href="<?php echo BASE_URL;?>teacher/add" class="link">
         <img src="<?php echo BASE_URL;?>view/teacher/includes/iadd.svg" alt="icon" />
         <span>Add Video</span>
       </a>
-      <a href="#" class="link">
-          <img src="<?php echo BASE_URL;?>view/teacher/includes/isettings.svg" alt="icon" />
-          <span>Settings</span>
-        </a>
+      
       <div class="bottme-nav">
-        <a href="#" id="logout" class="link">
+        <a href="<?php echo BASE_URL;?>teacher/logout" id="logout" class="link">
           <img src="<?php echo BASE_URL;?>view/teacher/includes/ilogout.svg" alt="icon" />
           <span>Logout</span>
         </a>
@@ -75,7 +64,7 @@
           <th>Description</th>
           <th>Subject</th>
           <th>Add Date</th>
-          <th>Views</th>
+          <th>State</th>
           <th>Action</th>
         </tr>
         <?php foreach($videos as $video){; ?>
@@ -87,7 +76,11 @@
           <td><?php echo $video['dscr']; ?> </td>
           <td><?php echo $video['subject']; ?> </td>
           <td><?php echo $video['adddate']; ?> </td>
-          <td> number</td>
+          <td><?php if($video['active'] == 1){
+            echo "Accepted";
+          }else{
+            echo "On Review";
+          }; ?></td>
           <td>
             <div class="action">
               <a href="<?php echo BASE_URL;?>teacher/UpdateVideo/<?php echo $video['id'];?>"><img src="<?php echo BASE_URL;?>view/teacher/includes/iedit.svg" id="edit" alt="edit" /></a>

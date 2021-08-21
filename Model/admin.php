@@ -13,7 +13,7 @@ class admin{
     }
 
     function connect($username, $pswrd){
-        $result = $this->db->login($username, $pswrd);
+        $result = $this->db->alogin(self::$table, $username, $pswrd);
         return $result;
     }
 }

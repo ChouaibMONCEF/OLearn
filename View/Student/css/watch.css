@@ -205,6 +205,12 @@ height:0;
     width: 70vw;
     height: 70vh;
 }
+
+.com{
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
 .comment{
     width: 30vw;
     height: 70vh;

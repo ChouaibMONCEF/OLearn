@@ -227,6 +227,7 @@ main table tr:not(:first-child) > :first-child .product img {
 }
 
 .navbar .link-item {
+  margin-top: 5vh;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -270,7 +271,7 @@ main table tr:not(:first-child) > :first-child .product img {
 .navbar .link-item .bottme-nav {
   margin-top: auto;
 }
-/*# sourceMappingURL=dashboard.css.map */
+
 
 .video {
   display: none;

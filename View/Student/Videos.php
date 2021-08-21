@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Watch Videos</title>
 </head>
+
+<script>
+
+function math() {
+  const allItems = document.querySelectorAll(".vid-target")
+  Array.from(allItems).forEach((video)=>{
+     if(!video.classList.contains("2bac")){
+       video.style.display = "none"
+     }else{
+        video.style.display = "block"
+     }
+  })
+  // console.log(allItems);
+}
+
+</script>
+
 <body>
 
     <header class="mb-5">
@@ -19,10 +36,12 @@
 
         <div class="nav">
         <form action="">
-            <input type="text" placeholder="     Search"  >
+            <input type="text" placeholder="Search">
             <button class="btn"><i class="fa fa-search"  ></i></button>
         </form>
         </div>
+
+        
 
     </header>
     
@@ -30,18 +49,31 @@
         
         <div class="row row-cols-2 row-cols-md-4 g-4">
           <?php foreach($videos as $video){; ?>
-  <div class="col">
+  <div class="col vid-target <?php echo $video['subject'];?> <?php echo $video['grade'];?>" >
+    <a href="<?php echo BASE_URL;?>student/watch/<?php echo $video['id'];?>">
     <div class="card h-80 mt-3">
       <img src="<?php echo BASE_URL;?>assets/thumbnail/<?php echo $video['thumbnail']; ?>" class="card-img-top omg" alt="...">
       <div class="card-body">
         <h5 class="card-title"><?php echo $video['title']; ?></h5>
         <p class="card-text"><?php echo $video['subject']; ?></p>
       </div>
+     </a>
     </div>
   </div>
   <?php }?>
 </div>
+
+<div>
+  <button onclick="math()" >allo</button>
+  <button onclick="math()" >allo</button>
+</div>
     </section>
 
 </body>
+
+
+
+
+
+
 </html>

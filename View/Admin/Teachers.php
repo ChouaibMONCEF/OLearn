@@ -25,11 +25,7 @@
       <a href="#" class=""><img src="<?php echo BASE_URL;?>view/admin/includes/logo.svg" alt="logo smanager" /></a>
     </div>
 
-    <div class="profile-image">
-      <img id="profile" class="profileimg" src="<?php echo BASE_URL;?>view/admin/includes/logo.svg" alt="profile" />
-      
-      <p class="user-name"></p>
-    </div>
+    
 
     <div class="link-item">
       <a href="<?php echo BASE_URL;?>teacher/Teachers" class="link">
@@ -42,7 +38,7 @@
       </a>
       
       <div class="bottme-nav">
-        <a href="#" id="logout" class="link">
+        <a href="<?php echo BASE_URL;?>admin/logout" id="logout" class="link">
           <img src="<?php echo BASE_URL;?>view/admin/includes/ilogout.svg" alt="icon" />
           <span>Logout</span>
         </a>

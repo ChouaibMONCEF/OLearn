@@ -8,16 +8,18 @@
     <title>Document</title>
 </head>
       <body>
+          <a href="<?php echo BASE_URL;?>public/home">
          <img class="olearn" src="<?php echo BASE_URL;?>view/public/includes/logo.svg" alt="" srcset="">
+        </a>
       <section>
     <div class="form"> 
        <h3>Admin</h3>
-        <form id="form" method="POST" action="http://localhost/OLearn/student/register">
+        <form id="form" method="POST" action="http://localhost/OLearn/admin/login">
             <div>
                 <div>
                     <div class="inp">
                         <label>Username:</label> <br>
-                        <input class="nrd" type="text" name="email" placeholder="ChoaibMoncef1@gmail.com">
+                        <input class="nrd" type="text" name="username">
                     </div>
                     <div class="inp">
                         <label>Password:</label> <br>

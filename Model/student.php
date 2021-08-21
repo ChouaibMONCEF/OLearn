@@ -23,7 +23,7 @@ class student{
     }
 
     function connect($email, $pswrd){
-        $result = $this->db->login($email, $pswrd);
+        $result = $this->db->login(self::$table, $email, $pswrd);
         return $result;
     }
 }

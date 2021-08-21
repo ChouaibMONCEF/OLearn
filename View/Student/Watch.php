@@ -19,8 +19,8 @@
 
         <div class="nav">
         <form action="">
-            <input type="text" placeholder="     Search"  >
-            <button class="btn"><i class="fa fa-search"  ></i></button>
+            <input type="text" placeholder="Search">
+            <button class="btn"><i class="fa fa-search"></i></button>
         </form>
         </div>
 
@@ -29,11 +29,11 @@
 
 
     <section>
-
+    <?php foreach($videos as $video){; ?>
     <div class="video">
       <div class="video-box">
         <iframe
-          src="https://www.youtube.com/embed/xKuJrmlCdig"
+          src="https://www.youtube.com/embed/<?php echo $video['video'];?>"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -41,103 +41,36 @@
         ></iframe>
       </div>
     </div>
+    
 
   
       <div class="comment">
            <div id="box" class="box">
         <div class="boxx">
+          <?php foreach($coms as $com){; ?>
           <div class="question-box">
             <div class="question">
               <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
+                <?php echo $com['student'];?>
               </h1>
               <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
+                <?php echo $com['com'];?>
               </p>
             </div>
           </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-          <div class="question-box">
-            <div class="question">
-              <h1 class="question-title">
-                Morbi tincidunt augue interdum velit euismod in ?
-              </h1>
-              <p class="question-description">
-                Putate odio ut enim blandit volutpat maecenas volutpat blandit.
-                Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo.
-                Adipiscing commodo elit at imperdiet dui accumsan sit amet
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="reply" >
-        <form action="">
-            <input type="text" placeholder="     Search"  >
-            <button class="btn"><i class="fa fa-paper-plane"  ></i></button>
-        </form>
-    </div>
+          <?php }; ?>
+          
+        
       </div>
+      <div class="reply" >
+          
+        <form method="POST" action="http://localhost/OLearn/student/addcomment">
+            <input type="text" name="com" class="com" placeholder="Add a Comment"  >
+            <input type="hidden" name="vid" value="<?php echo $video['0'];?>">
+            <button class="btn" type="submit"><i class="fa fa-paper-plane"  ></i></button>
+        </form>
+      <?php }; ?>
+    </div>
       
     </div>
     </div>
