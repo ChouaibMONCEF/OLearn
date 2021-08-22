@@ -38,6 +38,10 @@ class video{
         return $this->db->getAccepted(self::$table);
     }
 
+    function search($text){
+        return $this->db->search(self::$table, $text);
+    }
+
     function getvac($id){
         return $this->db->getvac($id);
     }

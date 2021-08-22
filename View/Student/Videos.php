@@ -194,11 +194,15 @@
         <label for="menu-bar" class="fas fa-bars" ></label>
 
         <div class="nav">
-        <form action="">
-            <input type="text" placeholder="Search">
-            <button class="btn"><i class="fa fa-search"  ></i></button>
+        <form method="post" action="http://localhost/OLearn/student/videos">
+            <input type="text" name="search" placeholder="Search">
+            <button type="submit" class="btn"><i class="fa fa-search"  ></i></button>
         </form>
         </div>
+
+        <a href="<?php echo BASE_URL;?>student/logout">
+        Logout
+        </a>
 
         
 

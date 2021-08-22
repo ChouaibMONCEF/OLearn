@@ -52,6 +52,12 @@ class connection
         return $this->sql->query($query)->fetchAll();
     }
 
+    public function search($table, $text)
+    {
+        $query = "SELECT * from " . $table . " WHERE title LIKE '%$text%' OR dscr LIKE '%$text%' AND active = 1";
+        return $this->sql->query($query)->fetchAll();
+    }
+
     public function getvac($id){
         $query = "SELECT * FROM videos,teachers WHERE videos.id = $id AND videos.tid = teachers.id";
         return $this->sql->query($query)->fetchAll();

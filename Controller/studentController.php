@@ -64,9 +64,16 @@ class studentController{
 
     function Videos(){
         if (isset($_SESSION['Student'])) {
+        if(isset($_POST['search']) && !empty($_POST['search'])){
+        $obj = new video;
+        $text = $_POST['search'];
+        $videos = $obj->search($text);
+        require __DIR__ . '/../View/Student/videos.php';
+        }else{
         $obj = new video;
         $videos = $obj->getAccepted();
         require __DIR__ . '/../View/Student/videos.php';
+        }
         }else {
             header('Location: http://localhost/OLearn/public/login');
         }
