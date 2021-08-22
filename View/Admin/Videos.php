@@ -29,11 +29,11 @@
     
 
     <div class="link-item">
-      <a href="<?php echo BASE_URL;?>teacher/ApproveTeachers" class="link">
+      <a href="<?php echo BASE_URL;?>admin/Teachers" class="link">
         <img src="<?php echo BASE_URL;?>view/admin/includes/iteachers.svg" alt="icon" />
         <span>Approve Teachers</span>
       </a>
-      <a href="<?php echo BASE_URL;?>video/ApproveVideos" class="link">
+      <a href="<?php echo BASE_URL;?>admin/Videos" class="link">
         <img src="<?php echo BASE_URL;?>view/admin/includes/ivideos.svg" alt="icon" />
         <span>Approve Videos</span>
       </a>
@@ -49,11 +49,6 @@
   <main>
     <h1>Videos</h1>
     <div class="search">
-    <form action="">
-    <input type="text" placeholder="Search">
-    <button class="btn"><i class="fa fa-search" style="color: #7579E7" ></i></button>
-    
-  </form>
 </div>
     <div class="tableHolder">
       <table id="table">

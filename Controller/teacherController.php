@@ -17,15 +17,24 @@ class teacherController
             $email = $_POST['email'];
             $pswrd = $_POST['pswrd'];
 
-            $login = $obj->login($email, $pswrd);
+            $login = $obj->login($email);
 
             if($login == false){ 
                 header('Location: http://localhost/OLearn/public/login');
             }else{
-                foreach($login as $key){
-                $_SESSION['Teacher'] = $key['0'];
-                header('Location: http://localhost/OLearn/teacher/Myvideos');
-            }
+                if(!password_verify( $pswrd , $login->pswrd)){
+
+                        header('Location: http://localhost/OLearn/public/login');
+
+                    }else{
+                        $_SESSION['Teacher'] = $login->id;
+                        $_SESSION['isactive'] = $login->active;
+                        header('Location: http://localhost/OLearn/teacher/Myvideos');
+                    }
+               
+                // $_SESSION['Teacher'] = $login->id;
+                // header('Location: http://localhost/OLearn/teacher/Myvideos');
+            
             }
         }
     }
@@ -39,7 +48,7 @@ class teacherController
             $obj->fullname = $_POST['fullname'];
             $obj->email = $_POST['email'];
             $obj->birthdate = $_POST['birthdate'];
-            $obj->pswrd = $_POST['pswrd'];
+            $obj->pswrd = password_hash($_POST['pswrd'], PASSWORD_DEFAULT);
             $obj->subject = $_POST['subject'];
             $obj->school = $_POST['school'];
             $obj->experience = $_POST['experience'];
@@ -56,7 +65,7 @@ class teacherController
     }
 
     function add(){
-        if (isset($_SESSION['Teacher'])) {
+        if (isset($_SESSION['Teacher']) && $_SESSION['isactive'] == 1) {
         require __DIR__ . '/../View/teacher/add.php';
         if (isset($_POST['video']) && !empty($_POST['video']) && isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['grade']) && !empty($_POST['grade']) && isset($_POST['dscr']) && !empty($_POST['dscr']) && isset($_POST['subject']) && !empty($_POST['subject']) && isset($_FILES['thumbnail'])){
         $obj = new video;
@@ -91,6 +100,7 @@ class teacherController
         $obj->tid = $_SESSION['Teacher'];
 
         $obj->addVideo();
+        header('Location: http://localhost/OLearn/teacher/myvideos');
         
         }
         }else {
@@ -124,7 +134,7 @@ class teacherController
     // }
 
     function UpdateVideo($id){
-        if (isset($_SESSION['Teacher'])) {
+        if (isset($_SESSION['Teacher']) && $_SESSION['isactive'] == 1) {
         $obj = new video;
         $videos = $obj->getById($id);
         require __DIR__ . '/../View/teacher/edit.php';
@@ -134,19 +144,19 @@ class teacherController
     }
 
     function Update($id){
-        if (isset($_SESSION['Teacher'])) {
+        if (isset($_SESSION['Teacher']) && $_SESSION['isactive'] == 1) {
         $obj = new video;
         $obj->title = $_POST['title'];
         $obj->dscr = $_POST['dscr'];
         $obj->update($id);
-        header('Location: http://localhost/OLearn/video/MyVideos');
+        header('Location: http://localhost/OLearn/teacher/MyVideos');
         }else {
             header('Location: http://localhost/OLearn/public/login');
         }
     }
 
     function Delete($id){
-        if (isset($_SESSION['Teacher'])) {
+        if (isset($_SESSION['Teacher']) && $_SESSION['isactive'] == 1) {
         $obj = new video;
         $obj->Delete($id);
         header('Location: http://localhost/OLearn/video/MyVideos');

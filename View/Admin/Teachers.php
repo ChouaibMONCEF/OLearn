@@ -28,11 +28,11 @@
     
 
     <div class="link-item">
-      <a href="<?php echo BASE_URL;?>teacher/Teachers" class="link">
+      <a href="<?php echo BASE_URL;?>admin/Teachers" class="link">
         <img src="<?php echo BASE_URL;?>view/admin/includes/iteachers.svg" alt="icon" />
         <span>Approve Teachers</span>
       </a>
-      <a href="<?php echo BASE_URL;?>video/Videos" class="link">
+      <a href="<?php echo BASE_URL;?>admin/Videos" class="link">
         <img src="<?php echo BASE_URL;?>view/admin/includes/ivideos.svg" alt="icon" />
         <span>Approve Videos</span>
       </a>

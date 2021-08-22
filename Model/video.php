@@ -48,7 +48,7 @@ class video{
     
 
     function Addvideo(){
-        return $this->db->add(self::$table, ["video", "title", "dscr", "grade", "subject", "lesson", "thumbnail", "adddate"], [$this->video, $this->title, $this->dscr, $this->grade, $this->subject, $this->lesson, $this->thumbnail, $this->adddate]);
+        return $this->db->add(self::$table, ["video", "title", "dscr", "grade", "subject", "lesson", "thumbnail", "adddate", "tid"], [$this->video, $this->title, $this->dscr, $this->grade, $this->subject, $this->lesson, $this->thumbnail, $this->adddate, $this->tid]);
     }
 
     function update($id){

@@ -22,8 +22,8 @@ class student{
         return $this->db->add(self::$table, ["fullname", "email", "phonenumber", "birthdate", "pswrd"], [$this->fullname, $this->email, $this->phonenumber, $this->birthdate, $this->pswrd]);
     }
 
-    function connect($email, $pswrd){
-        $result = $this->db->login(self::$table, $email, $pswrd);
+    function connect($email){
+        $result = $this->db->login(self::$table, $email);
         return $result;
     }
 }

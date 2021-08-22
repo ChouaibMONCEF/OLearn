@@ -36,9 +36,12 @@ class teacher{
         return $this->db->selectById(self::$table, $id);
     }
 
-    function login($email, $pswrd){
-        $result = $this->db->login(self::$table, $email, $pswrd);
+    function login($email){
+
+        $result = $this->db->login(self::$table, $email);
+
         return $result;
+        
     }
 
     function getAll(){

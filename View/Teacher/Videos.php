@@ -30,7 +30,7 @@
 
     <div class="link-item">
 
-      <a href="?php echo BASE_URL;?>teacher/myvideos" class="link">
+      <a href="<?php echo BASE_URL;?>teacher/myvideos" class="link">
         <img src="<?php echo BASE_URL;?>view/teacher/includes/ivideos.svg" alt="icon" />
         <span>My videos</span>
       </a>
@@ -92,6 +92,9 @@
          <?php };?>
         
       </table>
+      <?php if ($_SESSION['isactive'] == 0) {
+          echo "<h3> Not accepted yet check again in a few hours </h3>";
+      }?>
     </div>
   </main>
 </body>

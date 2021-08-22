@@ -32,6 +32,25 @@ header{
     z-index: 100;
 }
 
+.hdr{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+select{
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2rem;
+    margin-top: 111px;
+    margin-bottom: 5px;
+    width: 10vw;
+    height: 4vh;
+    color: #C9E4F0;
+    background-color: #7579E7;
+    border-radius: 5px;
+}
+
 section{
     
     min-height: 100vh;
@@ -44,6 +63,41 @@ header img{
     font-size: 2rem;
 
 }
+
+
+.red{
+    margin: 15px 0px 15px 0px;
+    border-bottom: 1.5px solid #7579E7;
+}
+
+.unselected{
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 10vw;
+    height: 4vh;
+    color: #7579E7;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1.5px solid #7579E7;
+}
+
+.selected{
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 10vw;
+    height: 4vh;
+    color: #C9E4F0;
+    background-color: #7579E7;
+    border-radius: 5px;
+}
+
+
 
 header .nav form{
         width: auto;
@@ -102,6 +156,18 @@ header label{
     html{
         font-size: 55%;
     }
+}
+@media (max-width:1100px){
+    .unselected{
+    width: 18vw;
+}
+
+.selected{
+    width: 18vw;
+}
+select{
+    width: 18vw;
+}
 }
 
 @media (max-width:768px){

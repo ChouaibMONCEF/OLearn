@@ -12,8 +12,8 @@ class admin{
         $this->db = new Connection();
     }
 
-    function connect($username, $pswrd){
-        $result = $this->db->alogin(self::$table, $username, $pswrd);
+    function connect($username){
+        $result = $this->db->alogin(self::$table, $username);
         return $result;
     }
 }

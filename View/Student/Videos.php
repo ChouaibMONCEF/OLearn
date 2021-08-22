@@ -12,17 +12,176 @@
 
 <script>
 
-function math() {
-  const allItems = document.querySelectorAll(".vid-target")
-  Array.from(allItems).forEach((video)=>{
-     if(!video.classList.contains("2bac")){
-       video.style.display = "none"
-     }else{
-        video.style.display = "block"
-     }
-  })
+// function math() {
+//   const allItems = document.querySelectorAll(".vid-target")
+//   Array.from(allItems).forEach((video)=>{
+//      if(!video.classList.contains("2bac")){
+//        video.style.display = "none"
+//      }else{
+//         video.style.display = "block"
+//      }
+//   })
   // console.log(allItems);
+
+  let selectedGrade = null
+
+  function sbac() {
+    selectedGrade = "2bac"
+    const allItems = document.querySelectorAll(".vid-target")
+    if(document.querySelector("#c").classList.contains("unselected")){
+
+    
+    
+    Array.from(allItems).forEach((video)=>{
+      if(!video.classList.contains("2bac")){
+        video.style.display = "none"
+        document.querySelector("#c").classList.add("selected")
+        document.querySelector("#c").classList.remove("unselected")
+        document.querySelector("#a").classList.remove("selected")
+        document.querySelector("#a").classList.add("unselected")
+        document.querySelector("#b").classList.remove("selected")
+        document.querySelector("#b").classList.add("unselected")
+        }else{
+        video.style.display = "block"
+      }
+    })
+
+    }else{
+      Array.from(allItems).forEach((video)=>{
+        video.style.display = "block"
+        document.querySelector("#c").classList.remove("selected")
+        document.querySelector("#c").classList.add("unselected")
+      })
+    }
+  }
+
+  function fbac() {
+    selectedGrade = "1bac"
+    const allItems = document.querySelectorAll(".vid-target")
+    if(document.querySelector("#b").classList.contains("unselected")){
+    Array.from(allItems).forEach((video)=>{
+      if(!video.classList.contains("1bac")){
+        video.style.display = "none"
+        document.querySelector("#b").classList.add("selected")
+        document.querySelector("#b").classList.remove("unselected")
+        document.querySelector("#a").classList.remove("selected")
+        document.querySelector("#a").classList.add("unselected")
+        document.querySelector("#c").classList.remove("selected")
+        document.querySelector("#c").classList.add("unselected")
+        }else{
+        video.style.display = "block"
+      }
+
+    })
+  }else{
+      Array.from(allItems).forEach((video)=>{
+        video.style.display = "block"
+        document.querySelector("#b").classList.remove("selected")
+        document.querySelector("#b").classList.add("unselected")
+      })
 }
+  }
+  function tc() {
+    selectedGrade = "5eme"
+    const allItems = document.querySelectorAll(".vid-target")
+    if(document.querySelector("#a").classList.contains("unselected")){
+    Array.from(allItems).forEach((video)=>{
+      if(!video.classList.contains("5eme")){
+        video.style.display = "none"
+        document.querySelector("#a").classList.add("selected")
+        document.querySelector("#a").classList.remove("unselected")
+        document.querySelector("#c").classList.remove("selected")
+        document.querySelector("#c").classList.add("unselected")
+        document.querySelector("#b").classList.remove("selected")
+        document.querySelector("#b").classList.add("unselected")
+        }else{
+        video.style.display = "block"
+      }
+
+    })
+  }else{
+      Array.from(allItems).forEach((video)=>{
+        video.style.display = "block"
+        document.querySelector("#a").classList.remove("selected")
+        document.querySelector("#a").classList.add("unselected")
+      })
+}
+  }
+
+  function filter(){
+    let subject = document.querySelector("#sl")
+    console.log(subject.selectedIndex)
+    const allItems = document.querySelectorAll(".vid-target")
+    Array.from(allItems).forEach((video)=>{
+      if(subject.selectedIndex == 1){
+      if(!video.classList.contains("Mathematiques") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+    }else if(subject.selectedIndex == 2){
+      if(!video.classList.contains("Physics") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 3){
+      if(!video.classList.contains("Svt") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 4){
+      if(!video.classList.contains("Philosophy") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 5){
+      if(!video.classList.contains("Traduction") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 6){
+      if(!video.classList.contains("French") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+       }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 7){
+      if(!video.classList.contains("English") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 8){
+      if(!video.classList.contains("Arabe") || !video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+
+    }else if(subject.selectedIndex == 0){
+        if(!video.classList.contains(selectedGrade)){
+        video.style.display = "none"
+        }else{
+        video.style.display = "block"
+      }
+      }
+
+    
+    
+    
+  })
+}
+
 
 </script>
 
@@ -44,8 +203,39 @@ function math() {
         
 
     </header>
+
     
     <section class="mt-5">
+<div class="hdr">
+
+    <div>
+  <button class="unselected" id="a" onclick="tc()" >Tronc Commun</button>
+  <button class="unselected" id="b" onclick="fbac()" >1ère Bac</button>
+  <button class="unselected" id="c" onclick="sbac()" >2eme Bac</button>
+</div>
+
+
+<div>
+
+  <select name="" onchange="filter()" id="sl">
+  <option value="" >All</option>
+  <option>Mathematiques</option>
+  <option>Physics</option>
+  <option>Svt</option>
+  <option>Philosophy</option>
+  <option>Traduction</option>
+  <option>French</option>
+  <option>English</option>
+  <option>Arabe</option>
+  
+  </select>
+
+</div>
+
+
+</div>
+
+<hr class="red" >
         
         <div class="row row-cols-2 row-cols-md-4 g-4">
           <?php foreach($videos as $video){; ?>
@@ -61,11 +251,6 @@ function math() {
     </div>
   </div>
   <?php }?>
-</div>
-
-<div>
-  <button onclick="math()" >allo</button>
-  <button onclick="math()" >allo</button>
 </div>
     </section>
 

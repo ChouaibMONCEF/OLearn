@@ -18,16 +18,27 @@ class studentController{
             $email = $_POST['email'];
             $pswrd = $_POST['pswrd'];
 
-            $login = $obj->connect($email, $pswrd);
+            $login = $obj->connect($email);
 
-            if($login == false){
+            if( $login == false){
                 header('Location: http://localhost/OLearn/public/login');
             }else{
-                foreach($login as $key){
-                $_SESSION['Studentid'] = $key['id'];
-                $_SESSION['Student'] = $key['fullname'];
-                header('Location: http://localhost/OLearn/student/videos');
-            }
+                    if(!password_verify( $pswrd , $login->pswrd)){
+
+                        header('Location: http://localhost/OLearn/public/login');
+
+                    }else{
+                        
+                        $_SESSION['Studentid'] = $login->id;
+                        $_SESSION['Student'] = $login->fullname;
+                        header('Location: http://localhost/OLearn/student/videos');
+                    }
+
+                    
+                    
+                    
+                    
+            
             }
         }
     }
@@ -40,9 +51,11 @@ class studentController{
         $obj->fullname = $_POST['fullname'];
         $obj->email = $_POST['email'];
         $obj->birthdate = $_POST['birthdate'];
-        $obj->pswrd = $_POST['pswrd'];
+
+        $obj->pswrd = password_hash($_POST['pswrd'], PASSWORD_DEFAULT);
 
         $obj->register();
+        header('Location: http://localhost/OLearn/public/login');
         
         }else {
             echo"error";
@@ -61,6 +74,7 @@ class studentController{
 
     function Watch($id)
     {
+        
         if (isset($_SESSION['Student'])) {
         if (isset($id) && !empty($id)) {
            $obj = new video;
@@ -81,14 +95,17 @@ class studentController{
         if (isset($_SESSION['Student'])) {
         if (isset($_POST['com']) && !empty($_POST['com'])){
             $obj = new comment;
+            session_destroy();
             $obj->com = $_POST['com'];
             $obj->vid = $_POST['vid'];
             $obj->postdate = date("Y/m/d h:i:s");
             $obj->student = $_SESSION['Student'];
             $obj->sid = $_SESSION['Studentid'];
 
+            $id = $obj->vid;
+            // die($id);
             $obj->addcomment();
-            header('Location: http://localhost/OLearn/student/videos');
+            header("Location: http://localhost/OLearn/student/watch/$id");
         }
         }else {
             header('Location: http://localhost/OLearn/public/login');

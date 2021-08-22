@@ -35,14 +35,14 @@ class connection
 
     }
 
-    public function login($table, $email, $pswrd)
+    public function login($table, $email)
     {
-        $query = "SELECT * from $table WHERE email = '$email' AND pswrd = '$pswrd'";
+        $query = "SELECT * from $table WHERE email = '$email'";
         // die($query);
-      if(empty($this->sql->query($query)->fetchAll())){
+      if(empty($this->sql->query($query)->fetch(PDO::FETCH_OBJ))){
         return false;
       }else{
-          return $this->sql->query($query)->fetchAll();
+          return $this->sql->query($query)->fetch(PDO::FETCH_OBJ);
       }
     }
 
@@ -146,14 +146,14 @@ class connection
 
     // --------------------------------------------------------------Each actor login   
 
-    public function alogin($table, $username, $pswrd)
+    public function alogin($table, $username)
     {
-          $query = "SELECT * from $table WHERE username = '$username' AND pswrd = '$pswrd'";
+          $query = "SELECT * from $table WHERE username = '$username'";
         // die($query);
-      if(empty($this->sql->query($query)->fetchAll())){
+      if(empty($this->sql->query($query)->fetch(PDO::FETCH_OBJ))){
         return false;
       }else{
-          return $this->sql->query($query)->fetchAll();
+          return $this->sql->query($query)->fetch(PDO::FETCH_OBJ);
       }
     }
 

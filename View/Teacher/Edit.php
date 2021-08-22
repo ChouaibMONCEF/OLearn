@@ -17,7 +17,7 @@
 
     <div class="link-item">
 
-      <a href="?php echo BASE_URL;?>teacher/myvideos" class="link">
+      <a href="<?php echo BASE_URL;?>teacher/myvideos" class="link">
         <img src="<?php echo BASE_URL;?>view/teacher/includes/ivideos.svg" alt="icon" />
         <span>My videos</span>
       </a>
@@ -37,13 +37,13 @@
   <main>
     <div>
         <?php foreach($videos as $video){; ?>
-        <form id="form" method="POST" action="http://localhost/OLearn/video/Update/<?php echo $video['id'];?>">
+        <form id="form" method="POST" action="http://localhost/OLearn/teacher/Update/<?php echo $video['id'];?>">
             <div>
                 <div>
                    
                     <div class="input">
                         <label>Video here :</label> <br>
-                        <input type="file" name="video" disabled ><?php echo $video['video'];?>
+                        <input type="text"  value="<?php echo $video['video'];?>" disabled>
                     </div>
                     <div class="input">
                         <label>Title :</label> <br>
@@ -55,12 +55,12 @@
                     </div>
                     <div class="input">
                         <label>Grade :</label> <br>
-                        <input value="<?php echo $video['grade'];?>" name="grade" disabled >
+                        <input value="<?php echo $video['grade'];?>" disabled >
                         
                     </div>
                     <div class="input">
                         <label>Subject :</label> <br>
-                        <input value="<?php echo $video['subject'];?>" name="subject" disabled >
+                        <input value="<?php echo $video['subject'];?>" disabled >
                         
                     </div>
                     <div class="input">

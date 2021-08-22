@@ -18,15 +18,23 @@ class adminController{
             $username = $_POST['username'];
             $pswrd = $_POST['pswrd'];
 
-            $login = $obj->connect($username, $pswrd);
+            $login = $obj->connect($username);
 
             if($login == false){
                 header('Location: http://localhost/OLearn/public/adminsecretbackdoorforlogin');
             }else{
-                foreach($login as $key){
-                $_SESSION['admin'] = $key['id'];
-                header('Location: http://localhost/OLearn/admin/videos');
-            }
+                if(!password_verify( $pswrd , $login->pswrd)){
+                        header('Location: http://localhost/OLearn/public/adminsecretbackdoorforlogin');
+
+                    }else{
+
+                        $_SESSION['admin'] = $login->id;
+                        header('Location: http://localhost/OLearn/admin/videos');
+                        
+                    }
+                
+                
+            
             }
         }
     }
